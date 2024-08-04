@@ -12,10 +12,11 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cookieParser());
+
+
 app.use(cors({
-  origin: '*', // or specify your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: 'http://localhost:3000', // Replace with your actual frontend URL
+  credentials: true, // Enable credentials to be sent
 }));
 
 
